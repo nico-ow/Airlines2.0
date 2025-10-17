@@ -3,51 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - AirLines Booking</title>
+  <title>AirLines Booking Wizard</title>
   <link rel="stylesheet" href="home.css" />
 </head>
 <body>
   <header>
     <div class="nav-container">
-      <h1>✈️ AirLines Booking</h1>
-      <nav id="navbar">
+      <!-- Left Side: Site Title -->
+      <h1 class="logo">✈️ AirLines Booking</h1>
+
+      <!-- Mobile Menu Toggle -->
+      <span class="menu-toggle">☰</span>
+
+      <!-- Right Side: Navigation -->
+      <nav>
         <ul>
-          <li><a href="booking.html" class="active">Book a Flight</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="booking.html">Flights</a></li>
+          <li><a href="#">Promos</a></li>
+          <li><a href="#">Support</a></li>
         </ul>
       </nav>
-      <div class="menu-toggle" id="menuToggle">☰</div>
     </div>
   </header>
 
   <main>
     <div class="background-overlay"></div>
-    <section class="hero">
-      <div class="hero-content">
-        <h2>Your Journey Starts Here</h2>
-        <p>Book affordable flights and discover the world with comfort, style, and ease.</p>
-        <div class="button-group">
-          <a href="booking.html" class="btn-primary">Start Booking</a>
-          <a href="about.html" class="btn-secondary">Learn More</a>
-        </div>
+
+    <div class="hero">
+      <h2>Discover the World with Ease 🌍</h2>
+      <p>
+        Book your flights quickly and conveniently with our AirLines Booking Wizard.
+        Experience comfort, speed, and seamless travel — your journey starts here.
+      </p>
+
+      <div class="button-group">
+        <a href="booking.html" class="btn-primary">✈️ Start Booking</a>
+        <a href="#" class="btn-secondary">ℹ️ Learn More</a>
       </div>
-    </section>
+    </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 AirLines Booking. All rights reserved.</p>
+    <p>© 2025 AirLines Booking. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navbar = document.getElementById('navbar');
-    menuToggle.onclick = () => {
-      navbar.classList.toggle('active');
-    };
+    // === MENU TOGGLE FOR MOBILE ===
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector("nav");
+
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
   </script>
 </body>
 </html>
-
-
