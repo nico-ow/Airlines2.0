@@ -33,13 +33,20 @@ bookingForm.addEventListener("submit", (e) => {
     from: document.getElementById("from").value.trim(),
     to: document.getElementById("to").value.trim(),
     depart: document.getElementById("departDate").value,
-    return: document.getElementById("returnDate")?.value || "N/A",
+    return: document.getElementById("returnDate")?.value || "",
     passengers: parseInt(document.getElementById("numPassengers").value) || 1,
     flightType: flightType.value,
   };
 
+  // ✅ Basic validation
   if (!bookingData.from || !bookingData.to) {
     alert("Please select both Origin and Destination.");
+    return;
+  }
+
+  // ✅ New validation for round trip
+  if (bookingData.flightType === "round" && !bookingData.return) {
+    alert("Please select a return date for round-trip flights.");
     return;
   }
 
@@ -47,6 +54,7 @@ bookingForm.addEventListener("submit", (e) => {
   showStep(currentStep);
   generateDynamicFlights();
 });
+
 
 // === STEP 2: DYNAMIC FLIGHT GENERATION WITH PROMOS ===
 function generateDynamicFlights() {
