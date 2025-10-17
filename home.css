@@ -1,0 +1,253 @@
+/* --- RESET & BASE --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* --- HEADER --- */
+header {
+  background: rgba(0, 123, 255, 0.85);
+  color: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1100px;
+  margin: auto;
+}
+
+header h1 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+/* --- NAVIGATION --- */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 0;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom: 2px solid #fff;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* --- HERO SECTION --- */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Push hero lower */
+  position: relative;
+  background: url("https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center/cover;
+  height: 100vh;
+}
+
+/* Overlay for readability */
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.7)
+  );
+  z-index: 1;
+}
+
+.hero {
+  text-align: center;
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 60px 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 1.2s ease;
+  backdrop-filter: blur(15px);
+  z-index: 2;
+  margin-bottom: 80px;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #eaeaea;
+  margin-bottom: 35px;
+}
+
+/* --- BUTTONS --- */
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 86, 179, 0.5);
+}
+
+.btn-secondary {
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #007bff;
+  transform: translateY(-3px);
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #003f7f;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  nav ul {
+    gap: 15px;
+  }
+
+  .hero {
+    padding: 40px 25px;
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    background: rgba(0, 123, 255, 0.95);
+    text-align: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+  }
+
+  nav.active {
+    display: block;
+    padding: 15px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero {
+    border-radius: 12px;
+    padding: 30px 20px;
+    margin: 40px 15px 60px;
+  }
+
+  .hero h2 {
+    font-size: 1.9rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
