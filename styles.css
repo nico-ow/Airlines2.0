@@ -14,7 +14,7 @@ body {
     url("https://www.supplychain-outlook.com/media/Philippine-Airlines-Main-jpg-webp.webp")
     no-repeat center center / cover;
   color: #222;
-  margin: 0;
+  margin: 0;  
   display: flex;
   justify-content: center;
   align-items: center;

@@ -81,7 +81,7 @@ function generateDynamicFlights() {
     price = Math.floor(price);
 
     flights.push({
-      flightNo,
+      flightNo,   
       from: bookingData.from,
       to: bookingData.to,
       time,
@@ -91,7 +91,7 @@ function generateDynamicFlights() {
   }
 
   if (flights.length === 0) {
-    flightsList.innerHTML = `<p style="text-align:center; color:#666;">No available flights for this route.</p>`;
+    flightsList.innerHTML = `<p style="text-align:center; color:#fff;">No available flights for this route.</p>`;
     return;
   }
 
@@ -197,6 +197,7 @@ document.querySelectorAll(".prev").forEach(btn => {
 
 document.getElementById("homeBtn").addEventListener("click", function() {
   window.location.href = "index.html";
+  window.alert("Thank you!");
 });
 
 
